@@ -1,0 +1,26 @@
+# Intro
+
+Download youtube clips
+
+# Testing
+
+## Installing [tox](https://testrun.org/tox/latest/)
+
+* Install [tox](https://testrun.org/tox/latest/) into a location that
+you are able to access.
+
+This is usually done in a virtual env
+```
+$ virtualenv tox-ve
+$ tox-ve/bin/pip install tox
+```
+
+## Running tox
+
+* When testing, use [tox](https://testrun.org/tox/latest/)
+
+```
+# note that I am putting the tox-ve bin location in the $PATH - once off step!
+$ export PATH=$PATH:tox-ve/bin
+$ tox
+```
