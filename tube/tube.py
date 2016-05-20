@@ -1,6 +1,7 @@
 """
 Download youtube clips.
 """
+import sys
 from StringIO import StringIO
 from pytube import YouTube
 from lxml import html
@@ -78,7 +79,7 @@ def user_select(options):
     :rtype: :class:`int`
     """
     for count, element in enumerate(options, 1):
-        print "{}. {}".format(count, element)
+        sys.stdout.write("{}. {}\n".format(count, element))
 
     selected = None
     while selected is None or selected > len(options):
@@ -101,7 +102,7 @@ def run():
 
     qual = list(fetch_video_qualtiy(links))
     selected = user_select(qual)
-    print selected
+    sys.stdout.write("{}".format(selected))
     # import re
     # print(str(qual[0]))
     # value = re.search("(- \d{4,4}[p] -)",str( qual[4]))
