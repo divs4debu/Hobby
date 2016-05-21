@@ -2,7 +2,8 @@
 Download youtube clips.
 """
 import sys
-from StringIO import StringIO
+from io import StringIO
+from six.moves import input  # pylint: disable=redefined-builtin
 from pytube import YouTube
 from lxml import html
 import requests
@@ -84,7 +85,7 @@ def user_select(options):
     selected = None
     while selected is None or selected > len(options):
         try:
-            selected = int(raw_input('select one of the above: '))
+            selected = int(input('select one of the above: '))
         except Exception:  # pylint: disable=broad-except
             continue
     return selected

@@ -3,7 +3,7 @@ from behave import given, then, when
 from tube import tube
 import requests_mock
 from requests import RequestException
-from StringIO import StringIO
+from io import StringIO
 import mock
 
 
