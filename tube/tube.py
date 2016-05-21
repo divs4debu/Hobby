@@ -1,7 +1,9 @@
 """
 Download youtube clips.
 """
-from StringIO import StringIO
+import sys
+from io import StringIO
+from six.moves import input  # pylint: disable=redefined-builtin
 from pytube import YouTube
 from lxml import html
 import requests
@@ -78,12 +80,12 @@ def user_select(options):
     :rtype: :class:`int`
     """
     for count, element in enumerate(options, 1):
-        print "{}. {}".format(count, element)
+        sys.stdout.write("{}. {}\n".format(count, element))
 
     selected = None
     while selected is None or selected > len(options):
         try:
-            selected = int(raw_input('select one of the above: '))
+            selected = int(input('select one of the above: '))
         except Exception:  # pylint: disable=broad-except
             continue
     return selected
@@ -101,7 +103,7 @@ def run():
 
     qual = list(fetch_video_qualtiy(links))
     selected = user_select(qual)
-    print selected
+    sys.stdout.write("{}".format(selected))
     # import re
     # print(str(qual[0]))
     # value = re.search("(- \d{4,4}[p] -)",str( qual[4]))

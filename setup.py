@@ -34,7 +34,8 @@ auto_version_setup(
         "bs4",
         "lxml",
         "pytube",
-        "requests"
+        "requests",
+        "six",
     ],
     entry_points={
         "console_scripts": [
