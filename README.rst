@@ -10,7 +10,7 @@ Download youtube clips
 you are able to access.
 
 This is usually done in a virtual env
-```
+```bash
 $ virtualenv tox-ve
 $ tox-ve/bin/pip install tox
 ```
@@ -19,7 +19,7 @@ $ tox-ve/bin/pip install tox
 
 * When testing, use [tox](https://testrun.org/tox/latest/)
 
-```
+```bash
 # note that I am putting the tox-ve bin location in the $PATH - once off step!
 $ export PATH=$PATH:tox-ve/bin
 $ tox
